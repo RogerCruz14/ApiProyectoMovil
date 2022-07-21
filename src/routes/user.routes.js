@@ -1,7 +1,8 @@
 const notas = require('express').Router()
 
-notas.get('/', (req, res) => {
-    res.send('ok:ok')
-})
+const userController = require('../controllers/user.controllers')
+
+notas.post('/register', userController.register)
+notas.post('/login', userController.login)
 
 module.exports = notas
