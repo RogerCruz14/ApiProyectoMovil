@@ -10,6 +10,10 @@ const port = 3001 || process.env.PORT
 main = async () => {
     await require('./src/config/conexion').dbc()
 
+    app.get('/', (req, res) => {
+        res.json({msg: 'ok'})
+    })
+
     //MIDDLEWARES
     app.use(express.urlencoded({extended: false}))
     app.use(express.json())
